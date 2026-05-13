@@ -9,6 +9,7 @@ Terdapat 3 poin penting dalam tugas 2 PBW ini:
 3. data binding, menampilkan data di stock.html dan tracking.html dengan logika di javascript (stock.app.js dan tracking.app.js)
 
 ini adalah struktur folder yang ada dalam proyek tugas 2 ini:
+
 /index.html —————————— halaman depan dan navigasi Tracking dan Stok
 
 /stock.html —————————  halaman yang menampilkan stok buku
