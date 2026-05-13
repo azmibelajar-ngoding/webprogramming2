@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>TRACKING</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <section class="center-page">
+    <div class="container">
+        <div id="app">
+        <h1>TRACKING PENGIRIMAN</h1>
+        <p>Daftar DO beserta judul buku, lokasi, dan status pengiriman</p>
+        <div class="table-wrap">
+            <table border="1">
+            <tr>
+                <th>Kode DO</th>
+                <th>Judul Buku</th>
+                <th>Lokasi</th>
+                <th>Status pengiriman</th>
+            </tr>
+            <tr v-for="item in books" :key="item.kodeDO">
+                <td>{{ item.kodeDO }}</td>
+                <td>{{ item.judul }}</td>
+                <td>{{ item.lokasi }}</td>
+                <td>{{ item.status }}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+        <div class="actions" style="margin-top:16px;">
+            <a href="stock.html">
+                <button class="ghost">STOK</button>
+            </a>
+            <a href="index.html">
+                <button class="primary">HOME</button>
+            </a>
+        </div>
+    </div>
+</section>
+<script src="js/tracking.app.js"></script>
+</body>
+</html>

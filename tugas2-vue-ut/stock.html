@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>STOK</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <section class="center-page">
+    <div class="container">
+        <div id="app">
+            <h1>STOK BUKU</h1>
+            <p>Ini adalah daftar buku beserta ketersediaan stoknya</p>
+        <div class="table-wrap">
+            <table border="1">
+            <tr>
+                <th>Judul Buku</th>
+                <th>Kode Buku</th>
+                <th>Stok</th>
+                <th>Status</th>
+            </tr>
+            <tr v-for="item in books">
+                <td>{{ item.judul }}</td>
+                <td>{{ item.kode }}</td>
+                <td>{{ item.stok }}</td>
+                <td>
+                    <span v-if="item.stok < 5">
+                        Hampir Habis
+                    </span>
+                    <span v-else>
+                        Tersedia
+                    </span>
+                </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+        <div class="actions" style="margin-top:16px;">
+            <a href="tracking.html">
+                <button class="ghost">TRACKING</button>
+            </a>
+            <a href="index.html">
+                <button class="primary">HOME</button>
+            </a>
+        </div>
+    </div>
+</section>
+<script src="js/stock.app.js"></script>
+</body>
+</html>
