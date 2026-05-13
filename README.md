@@ -10,14 +10,14 @@ Terdapat 3 poin penting dalam tugas 2 PBW ini:
 
 ini adalah struktur folder yang ada dalam proyek tugas 2 ini:
 
-/index.html —————————— halaman depan dan navigasi Tracking dan Stok
+tugas2-vue-ut/index.html —————————— halaman depan dan navigasi Tracking dan Stok
 
-/stock.html —————————  halaman yang menampilkan stok buku
+tugas2-vue-ut/stock.html —————————  halaman yang menampilkan stok buku
 
-/tracking.html ——————— halaman yang menampilkan data status pengiriman buku
+tugas2-vue-ut/tracking.html ——————— halaman yang menampilkan data status pengiriman buku
 
-/css/styles.css —————— untuk mengatur tampilan web
+tugas2-vue-ut/css/styles.css —————— untuk mengatur tampilan web
 
-/js/stock.app.js ————— logika vue.js untuk stock.html
+tugas2-vue-ut/js/stock.app.js ————— logika vue.js untuk stock.html
 
-/js/tracking.app.js —— logika vue.js untuk tracking.html
+tugas2-vue-ut/js/tracking.app.js —— logika vue.js untuk tracking.html
