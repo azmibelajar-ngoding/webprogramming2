@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <title>
+        PEMESANAN
+    </title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+
+<section class="center-page">
+
+<div class="container">
+
+<div id="app">
+
+<header-component
+    title="PEMESANAN BAHAN AJAR"
+    subtitle="Sistem SITTA Universitas Terbuka">
+</header-component>
+
+<input
+    type="text"
+    placeholder="Nama Mahasiswa"
+    v-model="nama"
+    @keyup.enter="simpanPesanan"
+>
+
+<input
+    type="text"
+    placeholder="Cari Buku"
+    v-model="keyword"
+>
+
+<select v-model="bukuDipilih">
+
+    <option value="">
+        Pilih Buku
+    </option>
+
+    <option
+        v-for="item in filteredBooks"
+        :value="item.judul"
+    >
+        {{ item.judul }}
+    </option>
+
+</select>
+
+<input
+    type="number"
+    min="1"
+    v-model.number="jumlah"
+>
+
+<button
+    class="primary"
+    @click="simpanPesanan"
+>
+    SIMPAN
+</button>
+
+<button
+    class="ghost"
+    @click="showPanduan = !showPanduan"
+>
+    PANDUAN
+</button>
+
+<p
+    v-if="error"
+    class="error"
+>
+    {{ error }}
+</p>
+
+<p
+    v-else-if="jumlah >= 10"
+>
+    Pesanan dalam jumlah besar
+</p>
+
+<p
+    v-else
+>
+    Data siap disimpan
+</p>
+
+<div v-show="showPanduan">
+
+    <p>
+        Isi nama mahasiswa,
+        pilih buku,
+        lalu klik simpan.
+    </p>
+
+</div>
+
+<h2>
+
+    Total Pesanan :
+    {{ totalPesanan }}
+
+</h2>
+
+<table border="1">
+
+    <tr>
+
+        <th>No</th>
+        <th>Nama</th>
+        <th>Buku</th>
+        <th>Jumlah</th>
+        <th>Tanggal</th>
+
+    </tr>
+
+    <tr
+        v-for="(item,index) in pesanan"
+        :key="index"
+    >
+
+        <td>
+            {{ index + 1 }}
+        </td>
+
+        <td>
+            {{ formatNama(item.nama) }}
+        </td>
+
+        <td>
+            {{ item.buku }}
+        </td>
+
+        <td>
+            {{ item.jumlah }}
+        </td>
+
+        <td>
+            {{ item.tanggal }}
+        </td>
+
+    </tr>
+
+</table>
+
+<footer-component>
+</footer-component>
+
+</div>
+
+</div>
+        <div class="actions" style="margin-top:16px;">
+            <a href="stock.html">
+                <button class="primary">STOCK</button>
+            </a>
+            <a href="index.html">
+                <button class="ghost">HOME</button>
+            </a>
+            <a href="tracking.html">
+                <button class="primary">TRACKING</button>
+            </a>
+        </div>
+
+</section>
+
+<script src="js/components.js"></script>
+<script src="js/order.app.js"></script>
+
+</body>
+
+</html>
